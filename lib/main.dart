@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:notepad/components/login_signup.dart';
 import 'package:notepad/firebase_options.dart';
 
 Future<void> main() async {
@@ -30,6 +31,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return LoginSignupScreen();
   }
 }

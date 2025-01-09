@@ -33,10 +33,7 @@ class DefaultFirebaseOptions {
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -61,9 +58,20 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyD9-gAwhn--cS-LnLscrGPJLeGwbm3Dz3Y',
-    appId: '1:865028370216:android:da32d12cf33a8260292a1d',
+    appId: '1:865028370216:android:399eea4c88f30e7d292a1d',
     messagingSenderId: '865028370216',
     projectId: 'flutter-notepad-41fb4',
     storageBucket: 'flutter-notepad-41fb4.firebasestorage.app',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCTBAexEwOOBUrjnMOW_UOQeR_ceC2MH1U',
+    appId: '1:865028370216:web:146f9bc4ba3c0e8b292a1d',
+    messagingSenderId: '865028370216',
+    projectId: 'flutter-notepad-41fb4',
+    authDomain: 'flutter-notepad-41fb4.firebaseapp.com',
+    storageBucket: 'flutter-notepad-41fb4.firebasestorage.app',
+    measurementId: 'G-P19XVZEZNE',
+  );
+
 }
