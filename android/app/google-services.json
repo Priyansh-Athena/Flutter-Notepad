@@ -7,31 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:865028370216:android:da32d12cf33a8260292a1d",
-        "android_client_info": {
-          "package_name": "com.example.note"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD9-gAwhn--cS-LnLscrGPJLeGwbm3Dz3Y"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:865028370216:android:399eea4c88f30e7d292a1d",
         "android_client_info": {
           "package_name": "com.example.notepad"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "865028370216-e7qo9vsan4s1bqcnasfri311963gcufe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.notepad",
+            "certificate_hash": "68d390ffe7336df2f75eaafd897ad3b95f7fc184"
+          }
+        },
+        {
+          "client_id": "865028370216-9tlbhsfmiip5c5vpcgp5b50200motqg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD9-gAwhn--cS-LnLscrGPJLeGwbm3Dz3Y"
@@ -39,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865028370216-9tlbhsfmiip5c5vpcgp5b50200motqg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

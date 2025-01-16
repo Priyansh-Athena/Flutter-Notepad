@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import "package:awesome_icons/awesome_icons.dart";
+import 'package:notepad/signin/google_signin.dart';
 
 class LoginSignupScreen extends StatelessWidget {
   const LoginSignupScreen({super.key});
@@ -43,8 +45,8 @@ class LoginSignupScreen extends StatelessWidget {
               children: [
                 ActioButton(
                   icon: FontAwesomeIcons.google,
+                  callback: signInWithGoogle,
                 ),
-                ActioButton(icon: FontAwesomeIcons.github),
               ],
             ),
           ],
@@ -56,27 +58,37 @@ class LoginSignupScreen extends StatelessWidget {
 
 class ActioButton extends StatelessWidget {
   final IconData icon;
+  final VoidCallback callback;
 
-  const ActioButton({super.key, required this.icon});
+  const ActioButton({super.key, required this.icon, required this.callback});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 50,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(5),
-        border: Border.all(
-          color: Colors.black,
-          width: 2,
+    ValueNotifier userCredential = ValueNotifier('');
+
+    return GestureDetector(
+      onTap: () async {
+        userCredential.value = await signInWithGoogle();
+        if (userCredential.value != null)
+          print(userCredential.value.user!.email);
+      },
+      child: Container(
+        width: 50,
+        height: 50,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(
+            color: Colors.black,
+            width: 2,
+          ),
         ),
-      ),
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
-        child: Icon(
-          icon,
-          color: Colors.black,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Icon(
+            icon,
+            color: Colors.black,
+          ),
         ),
       ),
     );
